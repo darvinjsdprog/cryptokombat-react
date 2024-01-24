@@ -88,7 +88,7 @@ export default function PoolTreasuryContainer({
             >
               {poolTreasury}
             </PoppinsText>
-            {isDesktop && <Favicon />}
+            {isDesktop && <Favicon width={30} />}
           </View>
 
           <View style={styles[`${device}-playersContainer`]}>
@@ -171,6 +171,7 @@ const styles = StyleSheet.create({
   "desktop-container": {
     flex: 1,
     backgroundColor: blackColor,
+    minWidth: 290,
     borderColor: "red",
     border: "3px solid",
     borderRadius: 10,
@@ -188,6 +189,8 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
+    justifyContent: "space-between",
+    paddingRight: 2,
   },
   column: {
     display: "flex",
