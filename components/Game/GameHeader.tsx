@@ -34,7 +34,7 @@ export default function GameHeader({
       <View style={styles.pairContainer}>
         <HeaderItem
           title={"24H WIN RATIO"}
-          value={"0%"}
+          value={"86%"}
           isGreen={true}
           fontSize={width}
         />
@@ -43,7 +43,7 @@ export default function GameHeader({
             <VerticalDivider style={{ marginHorizontal: 20 }} />
             <HeaderItem
               title={"24H HIGH"}
-              value={"0$"}
+              value={"42000$"}
               isGreen={true}
               fontSize={width}
             />
@@ -59,7 +59,7 @@ export default function GameHeader({
       <View style={styles.pairContainer}>
         <HeaderItem
           title={"24H LIVE PLAYERS"}
-          value={"0$"}
+          value={"24"}
           isGreen={true}
           fontSize={width}
         />
@@ -68,7 +68,7 @@ export default function GameHeader({
             <VerticalDivider style={{ marginHorizontal: 20 }} />
             <HeaderItem
               title={"24H LOW"}
-              value={"0$"}
+              value={"38000$"}
               isGreen={false}
               fontSize={width}
             />

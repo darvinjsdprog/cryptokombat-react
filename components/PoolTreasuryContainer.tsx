@@ -66,6 +66,9 @@ export default function PoolTreasuryContainer({
     ).start();
   }, [animateValue]);
 
+  const globalValue = avatars.reduce(function (prev, current) {
+    return prev + +Number.parseInt(current.poolNumber.toString());
+  }, 0);
   return (
     <View
       ref={containerRef}
@@ -86,9 +89,9 @@ export default function PoolTreasuryContainer({
             <PoppinsText
               style={[styles[`${device}-poolText`], { color: color }]}
             >
-              {poolTreasury}
+              {globalValue}
             </PoppinsText>
-            {isDesktop && <Favicon width={30} />}
+            {isDesktop && <Favicon />}
           </View>
 
           <View style={styles[`${device}-playersContainer`]}>
@@ -157,6 +160,7 @@ const styles = StyleSheet.create({
     backgroundColor: blackColor,
     height: "100%",
     // height: 175,
+
     // maxWidth: 360,
   },
   "tablet-container": {
@@ -171,12 +175,12 @@ const styles = StyleSheet.create({
   "desktop-container": {
     flex: 1,
     backgroundColor: blackColor,
-    minWidth: 290,
     borderColor: "red",
     border: "3px solid",
     borderRadius: 10,
     height: "100%",
     maxWidth: 360,
+    minWidth: 290,
   },
   avatarContainer: {
     borderTopWidth: 3,
