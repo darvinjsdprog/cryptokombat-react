@@ -1,0 +1,24 @@
+version: 1
+frontend:
+  phases:
+    install:
+      commands:
+        - rm -rf node_modules
+        - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
+    preBuild:
+      commands:
+        - nvm use 18
+        - rm -rf node_modules
+        - yarn install
+        - npm install --silent --global expo-cli
+    build:
+      commands:
+        - 'npx expo export --platform web'
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - $(npm root --global)/**/*
